@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> movie list</title>
+    <style>
+        table{
+            background-color: yellow;
+
+        }
+        th{
+            color: red;
+            padding: 3px;
+            text-align: center;
+        }
+        td{
+            color: blue;
+            padding: 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Movies list details</h1>
+        <hr/>
+        {% if movieslists %}
+            <table border="2">
+                <thead>
+                <tr>
+                    <th>Release date</th>
+                    <th>Movies Name</th>
+                    <th>Actors</th>
+                    <th>actress</th>
+                    <th>Ratings</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for movie in movieslists %}
+                <tr>
+                    <td>{{ movie.releasedate }}</td>
+                    <td>{{ movie.moviename }}</td>
+                    <td>{{ movie.actor }}</td>
+                    <td>{{ movie.actress }}</td>
+                    <td>{{ movie.ratings }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <br/>
+            <br/>
+        <a href="/">Home-page</a>
+    {% else %}
+    <p>No movies yet found</p>
+    {% endif %}
+    </div>
+</body>
+</html>
